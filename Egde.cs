@@ -1,22 +1,27 @@
-﻿
-using System.ComponentModel.Design;
-
-public class Edge(Room destination, string? requirementType = null, int requirementValue = 0, string? requiredItem = null)
+﻿public class Edge
 {
-    public Room Destination { get; } = destination;
-    public string RequirementType { get; } = requirementType;
-    public int RequirementValue { get; } = requirementValue;
-    public string RequiredItem { get; } = requiredItem;
+    public Room Destination { get; }
+    public string RequirementType { get; }
+    public int RequirementValue { get; }
+    public string RequiredItem { get; }
 
-    public bool canTravel(Hero hero)
+    public Edge(Room destination, string? requirementType = null, int requirementValue = 0, string? requiredItem = null)
     {
-        if(RequirementType == "Strength" && hero.Strength<RequirementValue)
-        return false; 
-        if(RequirementType == "Agility" && hero.Agility<RequirementValue)
-        return false; 
-         if (RequiredItem != null && !hero.HasItem(RequiredItem))
-            return false;
-        return true;
+        Destination = destination;
+        RequirementType = requirementType;
+        RequirementValue = requirementValue;
+        RequiredItem = requiredItem;
+    }
 
+    public bool CanTravel(Hero hero)
+    {
+        if (RequirementType == "Strength" && hero.Strength < RequirementValue)
+            return false;
+        if (RequirementType == "Agility" && hero.Agility < RequirementValue)
+            return false;
+        if (RequiredItem != null && !hero.HasItem(RequiredItem))
+            return false;
+
+        return true;
     }
 }
