@@ -59,12 +59,21 @@ public class ChallengeTree
 
     private ChallengeNode Remove(ChallengeNode node, int difficulty)
     {
-        if (node == null) return null;
+        if (node == null) 
+        {
+            return null;
+        }
 
         if (difficulty < node.Difficulty)
+        {
             node.Left = Remove(node.Left, difficulty);
+
+        }
         else if (difficulty > node.Difficulty)
+        {
+
             node.Right = Remove(node.Right, difficulty);
+        }
         else
         {
             if (node.Left == null) return node.Right;
@@ -82,7 +91,10 @@ public class ChallengeTree
     private ChallengeNode FindMin(ChallengeNode node)
     {
         while (node.Left != null)
+        {
             node = node.Left;
+
+        }
         return node;
     }
 

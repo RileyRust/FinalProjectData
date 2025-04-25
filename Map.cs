@@ -2,38 +2,63 @@ using System.Net.Sockets;
 
 public class Map
 {
-     public Dictionary<int, Room> Rooms = new Dictionary<int, Room>();
+    public Dictionary<int, Room> Rooms = new Dictionary<int, Room>();
     public int ExitRoomNumber;
-     public void GenerateMap()
-    {
+  public void GenerateMap()
+{
+    int totalRooms = 30;
+    Random rand = new Random();
 
-        for (int i = 1; i <= 15; i++) // makes rooms
+    for (int i = 1; i <= totalRooms; i++)
+    {
+        Rooms[i] = new Room(i);
+    }
+
+    
+    List<int> shuffledRooms = Enumerable.Range(1, totalRooms)
+                                        .OrderBy(_ => rand.Next())
+                                        .ToList(); //look up
+
+    for (int i = 0; i < shuffledRooms.Count - 1; i++)
+    {
+        int current = shuffledRooms[i];
+        int next = shuffledRooms[i + 1];
+        if (!Rooms[current].Connections.Any(e => e.Destination == Rooms[next]))
         {
-            Rooms[i] = new Room(i);
+            Rooms[current].Connections.Add(new Edge(Rooms[next]));
         }
-         for (int i = 1; i < 15; i++) // connects rooms
+    }
+
+    ExitRoomNumber = shuffledRooms[^1]; 
+
+
+    for (int i = 1; i <= totalRooms; i++)
+    {
+        int extraConnections = rand.Next(1, 3); 
+        for (int j = 0; j < extraConnections; j++)
         {
-            Rooms[i].Connections.Add(new Edge(Rooms[i + 1]));
-        }
-        Random rand = new Random();
-        for (int i = 1; i <= 15; i++) // adds challenges 
-        {
-            int other = rand.Next(1, 16);
+            int other = rand.Next(1, totalRooms + 1);
             if (other != i && !Rooms[i].Connections.Any(e => e.Destination == Rooms[other]))
             {
                 string[] types = { "Strength", "Agility", null };
                 string[] items = { "Lockpick", null };
-                string type = types[rand.Next(types.Length)]; //randomly picks a stat
-                string item = items[rand.Next(items.Length)]; // randomly picks a item
-                int value = (type != null) ? rand.Next(5, 11) : 0; // picks a number if no stat set to zero
+                string type = types[rand.Next(types.Length)];
+                string item = items[rand.Next(items.Length)];
+                int value = (type != null) ? rand.Next(5, 11) : 0; // look up
 
-                Rooms[i].Connections.Add(new Edge(Rooms[other], type, value, item)); // addds room to another with requirements
+                Rooms[i].Connections.Add(new Edge(Rooms[other], type, value, item));
             }
         }
-
-       
-        ExitRoomNumber = 15;
     }
+
+    string[] challengeTypes = { "Combat", "Puzzle", "Trap" };
+    for (int i = 1; i <= totalRooms; i++)
+    {
+        string challengeType = challengeTypes[rand.Next(challengeTypes.Length)];
+        int difficulty = rand.Next(1, 11); // 1–10
+        Rooms[i].Challenge = new ChallengeNode(difficulty, challengeType);
+    }
+}
 
       public bool PathExistsBFS(int start, int goal)
     {

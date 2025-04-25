@@ -1,0 +1,3 @@
+In this project, the binary search tree used for storing challenges has an average insertion time of O(log n) 
+because each insert cuts the possible location in half as you move down the tree. In the worst case, if the tree becomes unbalanced, it can take
+ O(n) time. The breadth-first search algorithm used to check for a path between rooms has a time complexity of O(V + E), where V is the number of rooms and E is the number of paths. This is because breadth-first search visits every room and connection once. The hero's inventory uses a queue where adding or removing items takes O(1) constant time, since queues operate from the front and back without needing to search through all elements.

@@ -1,0 +1,15 @@
+C:\Users\riley\Datastructure\FinalProjectData\bin\Debug\net8.0\FinalProjectData.exe
+C:\Users\riley\Datastructure\FinalProjectData\bin\Debug\net8.0\FinalProjectData.deps.json
+C:\Users\riley\Datastructure\FinalProjectData\bin\Debug\net8.0\FinalProjectData.runtimeconfig.json
+C:\Users\riley\Datastructure\FinalProjectData\bin\Debug\net8.0\FinalProjectData.dll
+C:\Users\riley\Datastructure\FinalProjectData\bin\Debug\net8.0\FinalProjectData.pdb
+C:\Users\riley\Datastructure\FinalProjectData\obj\Debug\net8.0\FinalProjectData.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\riley\Datastructure\FinalProjectData\obj\Debug\net8.0\FinalProjectData.AssemblyInfoInputs.cache
+C:\Users\riley\Datastructure\FinalProjectData\obj\Debug\net8.0\FinalProjectData.AssemblyInfo.cs
+C:\Users\riley\Datastructure\FinalProjectData\obj\Debug\net8.0\FinalProjectData.csproj.CoreCompileInputs.cache
+C:\Users\riley\Datastructure\FinalProjectData\obj\Debug\net8.0\FinalProjectData.sourcelink.json
+C:\Users\riley\Datastructure\FinalProjectData\obj\Debug\net8.0\FinalProjectData.dll
+C:\Users\riley\Datastructure\FinalProjectData\obj\Debug\net8.0\refint\FinalProjectData.dll
+C:\Users\riley\Datastructure\FinalProjectData\obj\Debug\net8.0\FinalProjectData.pdb
+C:\Users\riley\Datastructure\FinalProjectData\obj\Debug\net8.0\FinalProjectData.genruntimeconfig.cache
+C:\Users\riley\Datastructure\FinalProjectData\obj\Debug\net8.0\ref\FinalProjectData.dll
