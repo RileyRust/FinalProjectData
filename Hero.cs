@@ -1,10 +1,10 @@
 public class Hero
 {
-    public int Strength {get; set;}
+    public int Strength {get; set;} = 3; 
 
-    public int Agility {get; set;}
+    public int Agility {get; set;} = 3;
 
-    public int Intelligence {get; set;}
+    public int Intelligence {get; set;} = 3;
 
     public int Health {get; set;} = 20; 
 
@@ -27,7 +27,8 @@ public class Hero
         }
         inventory.Enqueue(item); 
     }
-     public bool HasItem(string item)
+   
+    public bool HasItem(string item)
      {
      return inventory.Contains(item);
      } 

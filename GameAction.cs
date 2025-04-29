@@ -1,3 +1,4 @@
+
 public static class GameActions
 {
 public static void RunRoomChallenge(Hero hero, Room currentRoom)
@@ -32,6 +33,7 @@ public static void RunRoomChallenge(Hero hero, Room currentRoom)
     if (statValue >= challenge.Difficulty || hero.HasItem(requiredItem))
     {
         Console.WriteLine("You overcame the challenge!");
+        hero.PrintInventory(); 
     }
     else
     {
@@ -44,3 +46,7 @@ public static void RunRoomChallenge(Hero hero, Room currentRoom)
 }
 
 }
+
+
+
+
