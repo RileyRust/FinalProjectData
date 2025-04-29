@@ -9,4 +9,5 @@ public class Room
     {
         Number = number; 
     }
+    public string Item { get; set; }
 }

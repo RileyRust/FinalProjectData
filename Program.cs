@@ -5,7 +5,7 @@ public class Program
     public static void Main()
     {
         Stack<Room> visitedRooms = new Stack<Room>();
-        Hero hero = new Hero(strength: 10, agility: 7, intelligence: 5);
+        Hero hero = new Hero(strength: 3, agility: 3, intelligence: 3);
         Map map = new Map();
         map.GenerateMap();
         Stack<string> ItemStack = new Stack<string>();
